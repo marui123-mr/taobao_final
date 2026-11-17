@@ -4,15 +4,18 @@ FROM python:3.9-slim
 # 设置工作目录
 WORKDIR /app
 
-# 复制依赖文件并安装（加了 --no-cache-dir 减小体积）
+# 复制依赖文件
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-# 复制所有代码
+# 设置腾讯云 pip 镜像源并安装依赖
+RUN pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple && \
+    pip install --no-cache-dir -r requirements.txt
+
+# 复制所有代码和数据文件
 COPY . .
 
 # 暴露 8080 端口
 EXPOSE 8080
 
-# 使用 gunicorn 启动 Flask 应用（app:app 代表 app.py 里的 app 对象）
+# 使用 gunicorn 启动 Flask 应用
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--threads", "4", "app:app"]

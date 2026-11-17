@@ -155,9 +155,12 @@ def index():
 
 @app.route('/api/data')
 def api_data():
-    with open('data/taobao_summary.json', 'r', encoding='utf-8') as f:
+    # 【已修改】：去掉了原来的 data/ 前缀，直接读取根目录下的 json 文件
+    with open('taobao_summary.json', 'r', encoding='utf-8') as f:
         return jsonify(json.load(f))
 
 if __name__ == '__main__':
+    # 【已修改】：在本地测试时，保留 5000 端口。
+    # 在云端部署时，是由 Dockerfile 中的 gunicorn 接管并监听 8080 端口，这里的代码不会被执行。
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=port)

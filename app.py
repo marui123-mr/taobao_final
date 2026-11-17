@@ -1,6 +1,7 @@
 import os
 import json
-from flask import Flask, render_template_string, jsonify
+# 这里引入了 Response，用于强制浏览器渲染网页
+from flask import Flask, render_template_string, jsonify, Response
 
 app = Flask(__name__)
 
@@ -11,6 +12,7 @@ HTML_PAGE = """
 <head>
     <meta charset="UTF-8">
     <title>淘宝用户行为数据全景分析大屏</title>
+    <!-- 保持你论文里的 ECharts 原配置不变 -->
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -151,16 +153,14 @@ HTML_PAGE = """
 
 @app.route('/')
 def index():
-    return render_template_string(HTML_PAGE)
+    # 强制返回 text/html 格式，告诉浏览器这是网页，直接渲染不要下载
+    return Response(render_template_string(HTML_PAGE), mimetype='text/html')
 
 @app.route('/api/data')
 def api_data():
-    # 【已修改】：去掉了原来的 data/ 前缀，直接读取根目录下的 json 文件
     with open('taobao_summary.json', 'r', encoding='utf-8') as f:
         return jsonify(json.load(f))
 
 if __name__ == '__main__':
-    # 【已修改】：在本地测试时，保留 5000 端口。
-    # 在云端部署时，是由 Dockerfile 中的 gunicorn 接管并监听 8080 端口，这里的代码不会被执行。
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)

@@ -1,256 +1,258 @@
 {
     "kpi": {
         "total_users": 3000,
-        "total_behaviors": 263309,
-        "buy_users": 1901,
-        "buy_rate": 63.66
+        "total_behaviors": 296452,
+        "buy_users": 283,
+        "buy_rate": 9.43
     },
-    "behavior_dist": [
-        {
-            "name": "pv",
-            "value": 235663
-        },
-        {
-            "name": "cart",
-            "value": 14961
-        },
-        {
-            "name": "fav",
-            "value": 7385
-        },
-        {
-            "name": "buy",
-            "value": 5300
-        }
-    ],
     "funnel": [
         {
             "stage": "浏览",
-            "users": 2986
-        },
-        {
-            "stage": "收藏",
-            "users": 1107
+            "users": 2990
         },
         {
             "stage": "意向(收藏/加购)",
-            "users": 2502
+            "users": 2602
+        },
+        {
+            "stage": "收藏",
+            "users": 1169
         },
         {
             "stage": "购买",
-            "users": 1901
-        }
-    ],
-    "rfm_clusters": [
-        {
-            "cluster": 0,
-            "label": "流失用户",
-            "count": 691,
-            "avg_r": 4.8,
-            "avg_f": 1.61,
-            "avg_m": 1.61
-        },
-        {
-            "cluster": 1,
-            "label": "保持用户",
-            "count": 1022,
-            "avg_r": 0.93,
-            "avg_f": 2.47,
-            "avg_m": 2.47
-        },
-        {
-            "cluster": 2,
-            "label": "高价值用户",
-            "count": 1,
-            "avg_r": 0.0,
-            "avg_f": 61.0,
-            "avg_m": 61.0
-        },
-        {
-            "cluster": 3,
-            "label": "发展用户",
-            "count": 196,
-            "avg_r": 1.15,
-            "avg_f": 8.16,
-            "avg_m": 8.16
-        }
-    ],
-    "category_top10": [
-        {
-            "category_id": "2735466",
-            "buy_count": 117
-        },
-        {
-            "category_id": "4145813",
-            "buy_count": 108
-        },
-        {
-            "category_id": "1464116",
-            "buy_count": 87
-        },
-        {
-            "category_id": "4756105",
-            "buy_count": 77
-        },
-        {
-            "category_id": "2885642",
-            "buy_count": 76
-        },
-        {
-            "category_id": "4801426",
-            "buy_count": 76
-        },
-        {
-            "category_id": "982926",
-            "buy_count": 73
-        },
-        {
-            "category_id": "4159072",
-            "buy_count": 49
-        },
-        {
-            "category_id": "570735",
-            "buy_count": 48
-        },
-        {
-            "category_id": "2640118",
-            "buy_count": 48
-        }
-    ],
-    "daily_trend": [
-        {
-            "date": "2017-11-25",
-            "dau": 2107
-        },
-        {
-            "date": "2017-11-26",
-            "dau": 2139
-        },
-        {
-            "date": "2017-11-27",
-            "dau": 2167
-        },
-        {
-            "date": "2017-11-28",
-            "dau": 2155
-        },
-        {
-            "date": "2017-11-29",
-            "dau": 2180
-        },
-        {
-            "date": "2017-11-30",
-            "dau": 2228
-        },
-        {
-            "date": "2017-12-01",
-            "dau": 2290
-        },
-        {
-            "date": "2017-12-02",
-            "dau": 2870
-        },
-        {
-            "date": "2017-12-03",
-            "dau": 1
+            "users": 283
         }
     ],
     "hourly_pattern": [
         {
             "hour": 0,
-            "count": 9132
+            "count": 10233
         },
         {
             "hour": 1,
-            "count": 11162
+            "count": 12502
         },
         {
             "hour": 2,
-            "count": 12898
+            "count": 14087
         },
         {
             "hour": 3,
-            "count": 12660
+            "count": 14731
         },
         {
             "hour": 4,
-            "count": 12044
+            "count": 14144
         },
         {
             "hour": 5,
-            "count": 13790
+            "count": 14667
         },
         {
             "hour": 6,
-            "count": 13529
+            "count": 15497
         },
         {
             "hour": 7,
-            "count": 14304
+            "count": 15563
         },
         {
             "hour": 8,
-            "count": 13517
+            "count": 15402
         },
         {
             "hour": 9,
-            "count": 12008
+            "count": 14690
         },
         {
             "hour": 10,
-            "count": 12574
+            "count": 14582
         },
         {
             "hour": 11,
-            "count": 15990
+            "count": 17871
         },
         {
             "hour": 12,
-            "count": 20025
+            "count": 21546
         },
         {
             "hour": 13,
-            "count": 21942
+            "count": 24100
         },
         {
             "hour": 14,
-            "count": 21022
+            "count": 24474
         },
         {
             "hour": 15,
-            "count": 16439
+            "count": 18578
         },
         {
             "hour": 16,
-            "count": 8752
+            "count": 9871
         },
         {
             "hour": 17,
-            "count": 4114
+            "count": 4549
         },
         {
             "hour": 18,
-            "count": 2332
+            "count": 2628
         },
         {
             "hour": 19,
-            "count": 1862
+            "count": 1535
         },
         {
             "hour": 20,
-            "count": 1449
+            "count": 1669
         },
         {
             "hour": 21,
-            "count": 1519
+            "count": 1954
         },
         {
             "hour": 22,
-            "count": 3669
+            "count": 4235
         },
         {
             "hour": 23,
-            "count": 6576
+            "count": 7344
+        }
+    ],
+    "daily_trend": [
+        {
+            "date": "2017-10-26",
+            "dau": 1
+        },
+        {
+            "date": "2017-11-10",
+            "dau": 1
+        },
+        {
+            "date": "2017-11-18",
+            "dau": 1
+        },
+        {
+            "date": "2017-11-21",
+            "dau": 1
+        },
+        {
+            "date": "2017-11-22",
+            "dau": 1
+        },
+        {
+            "date": "2017-11-23",
+            "dau": 19
+        },
+        {
+            "date": "2017-11-24",
+            "dau": 578
+        },
+        {
+            "date": "2017-11-25",
+            "dau": 2149
+        },
+        {
+            "date": "2017-11-26",
+            "dau": 2149
+        },
+        {
+            "date": "2017-11-27",
+            "dau": 2127
+        },
+        {
+            "date": "2017-11-28",
+            "dau": 2142
+        },
+        {
+            "date": "2017-11-29",
+            "dau": 2181
+        },
+        {
+            "date": "2017-11-30",
+            "dau": 2202
+        },
+        {
+            "date": "2017-12-01",
+            "dau": 2254
+        },
+        {
+            "date": "2017-12-02",
+            "dau": 2834
+        },
+        {
+            "date": "2017-12-03",
+            "dau": 2763
+        }
+    ],
+    "category_top10": [
+        {
+            "category_id": "1464116",
+            "buy_count": 7
+        },
+        {
+            "category_id": "1879194",
+            "buy_count": 5
+        },
+        {
+            "category_id": "2885642",
+            "buy_count": 5
+        },
+        {
+            "category_id": "1265358",
+            "buy_count": 5
+        },
+        {
+            "category_id": "4145813",
+            "buy_count": 5
+        },
+        {
+            "category_id": "1575622",
+            "buy_count": 4
+        },
+        {
+            "category_id": "2735466",
+            "buy_count": 4
+        },
+        {
+            "category_id": "570735",
+            "buy_count": 4
+        },
+        {
+            "category_id": "3461823",
+            "buy_count": 3
+        },
+        {
+            "category_id": "2640118",
+            "buy_count": 3
+        }
+    ],
+    "rfm_clusters": [
+        {
+            "label": "高价值用户",
+            "count": 16,
+            "avg_r": 2.2,
+            "avg_f": 2.1
+        },
+        {
+            "label": "发展用户",
+            "count": 128,
+            "avg_r": 2.5,
+            "avg_f": 1.0
+        },
+        {
+            "label": "保持用户",
+            "count": 7,
+            "avg_r": 5.7,
+            "avg_f": 2.1
+        },
+        {
+            "label": "流失用户",
+            "count": 132,
+            "avg_r": 6.8,
+            "avg_f": 1.0
         }
     ]
 }

@@ -1,6 +1,5 @@
 import os
 import json
-# 这里引入了 Response，用于强制浏览器渲染网页
 from flask import Flask, render_template_string, jsonify, Response
 
 app = Flask(__name__)
@@ -35,7 +34,8 @@ HTML_PAGE = """
     </style>
 </head>
 <body>
-    <div class="header">淘宝用户行为数据全景分析平台</div>
+    <!-- 【修改点】我在这里加了（最新版）三个字，帮你确认缓存有没有刷新 -->
+    <div class="header">淘宝用户行为数据全景分析平台（最新版）</div>
     <div class="main-container">
         <div class="column-side">
             <div class="box chart-box-side" id="chart-scatter"></div>
@@ -64,7 +64,8 @@ HTML_PAGE = """
         var categoryChart = echarts.init(document.getElementById('chart-category'));
         var rfmChart = echarts.init(document.getElementById('chart-rfm'));
 
-        fetch('/api/data')
+        // 【修改点】给请求加一个随机时间戳参数，强制浏览器每次都去拿最新数据，不走缓存！
+        fetch('/api/data?t=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
                 document.getElementById('kpi-cards').innerHTML = `
@@ -151,15 +152,22 @@ HTML_PAGE = """
 </html>
 """
 
+
 @app.route('/')
 def index():
-    # 强制返回 text/html 格式，告诉浏览器这是网页，直接渲染不要下载
     return Response(render_template_string(HTML_PAGE), mimetype='text/html')
+
 
 @app.route('/api/data')
 def api_data():
-    with open('taobao_summary.json', 'r', encoding='utf-8') as f:
+    # 【修改点】保证读取绝对正确的文件路径
+    json_path = 'taobao_summary.json'
+    if not os.path.exists(json_path):
+        json_path = 'data/taobao_summary.json'
+
+    with open(json_path, 'r', encoding='utf-8') as f:
         return jsonify(json.load(f))
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
